@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Basic Three.js App</title>
+    <style>
+      body {
+        background-color: burlywood;
+      }
+      video {
+        border: black solid 1px;
+      }
+      canvas {
+        border: black solid 1px;
+      }
+      #settings {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      #settings div {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Replace Background with WebGL.</h3>
+    <div id="settings">
+      <div id="output">
+        <p>Output:</p>
+        <canvas id="canvas" width="320" height="240" />
+      </div>
+      <div id="input">
+        <p>Input:</p>
+        <video
+          width="320"
+          height="240"
+          id="video"
+          autoplay
+          crossorigin="anonymous"
+          controls
+          loop
+        >
+          <source src="video.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div id="config">
+        <p>Processing configs:</p>
+        <input type="color" id="keyColor" value="#000000" />
+        <label for="keyColor">Key color</label>
+
+        <p>Threshold:</p>
+        <input type="range" id="threshold" value="40" min="0" max="100" />
+      </div>
+      <div id="background">
+        <p>Background:</p>
+        <input type="color" id="color" value="#e66465" />
+        <input type="radio" id="useColor" name="Background" checked />
+        <label for="useColor">Color</label>
+
+        <input type="radio" id="transparent" name="Background" />
+        <label for="transparent">Transparent</label>
+
+        <input type="radio" id="useSky" name="Background" />
+        <label for="useSky">Sky</label>
+        <br />
+        <video
+          width="320"
+          height="240"
+          id="sky"
+          autoplay
+          crossorigin="anonymous"
+          controls
+          loop
+        >
+          <source src="sky.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/109/three.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
